@@ -1,6 +1,7 @@
 use clap::Clap;
 
 mod interpreter;
+mod lexical_analysis;
 mod log;
 
 #[derive(Clap)]
@@ -35,5 +36,5 @@ fn main() {
 
     pool.spawn_ok(interpreter::run(log_tx));
 
-    futures::executor::block_on(log::logger_run(logger, log_rx));
+    futures::executor::block_on(log::run(logger, log_rx));
 }
