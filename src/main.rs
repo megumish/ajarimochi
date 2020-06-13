@@ -1,6 +1,7 @@
 use clap::Clap;
 
 mod interpreter;
+mod lexer;
 mod log;
 
 #[derive(Clap)]
